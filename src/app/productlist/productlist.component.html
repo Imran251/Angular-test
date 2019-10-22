@@ -1,0 +1,23 @@
+<div class="product-list-header">
+    <mat-form-field>
+        <input matInput placeholder="Search" value="" (change)="searchProduct()" [(ngModel)]="search_key">
+    </mat-form-field>
+</div>
+<mat-paginator [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="changePage($event)">
+</mat-paginator>
+<div class="product-list">
+    <div class="proudct-wrap" *ngFor="let product of products">
+        <img class="product-img" src="//i5.walmartimages.com/asr/2c21ab79-3823-4b37-bb31-3ffe25f76139_1.aea6315428552c0ea5c0406618eda175.jpeg?odnWidth=282&amp;odnHeight=282&amp;odnBg=ffffff">
+        <a class="product-title" [title]="product.title + ' details'" [routerLink]="['/products/', product.id]" >{{ product.title }}</a>
+        <div class="product-price">$ {{ product.price }}</div>
+        <div class="product-quantity">
+            <mat-form-field class="full-width">
+                <input matInput type="number" placeholder="QTY" [(ngModel)]="product_quantities[product.id]">
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="accent" (click)="addToCart(product)">Add Cart</button>
+    </div>
+</div>

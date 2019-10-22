@@ -1,0 +1,36 @@
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+
+.proudct-wrap{
+    text-align: center;
+    padding: 20px;
+    width: 10%;
+    max-width: 120px;
+}
+
+.product-img{
+    width: 100px;
+}
+
+.product-title{
+    display: block;
+    text-align: center;
+    height: 60px;
+    overflow: hidden;
+}
+
+.product-price{
+    color: red;
+}
+
+.product-list-header{
+    margin-top: 10px;
+    text-align: right;
+}
+
+.full-width{
+    width: 100%;
+}

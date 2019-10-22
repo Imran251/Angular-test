@@ -1,0 +1,14 @@
+<div class="product-details">
+    <img class="product-detail-img" src="//i5.walmartimages.com/asr/2c21ab79-3823-4b37-bb31-3ffe25f76139_1.aea6315428552c0ea5c0406618eda175.jpeg?odnWidth=282&amp;odnHeight=282&amp;odnBg=ffffff">
+    <div class="products-info">
+        <h1 class="product-title">{{ product.title }}</h1>
+        <div class="product-price">$ {{ product.price }}</div>
+        <p class="product-description">{{ product.description }}</p>
+        <div class="product-quantity">
+            <mat-form-field class="full-width">
+                <input type="number" matInput placeholder="QTY" value="" [(ngModel)]="quantity">
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="accent" (click)="addToCart(product)">Add Cart</button>
+    </div>
+</div>

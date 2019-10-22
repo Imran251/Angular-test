@@ -1,0 +1,21 @@
+<div class="cart-lines">
+    <div class="cart-line" *ngFor="let line of items">
+        <img class="cart-line-img" src="//i5.walmartimages.com/asr/2c21ab79-3823-4b37-bb31-3ffe25f76139_1.aea6315428552c0ea5c0406618eda175.jpeg?odnWidth=282&amp;odnHeight=282&amp;odnBg=ffffff">
+        <p class="cart-line-title">{{ line.title }}</p>
+        <p class="cart-line-price">$ {{ line.price }}</p>
+        <div class="cart-line-quantity">
+            <mat-form-field class="full-width">
+                <input type="number" matInput placeholder="QTY" value="" [(ngModel)]="line.quantity">
+            </mat-form-field>
+        </div>
+        <div class="cart-line-update-btn">
+            <button mat-raised-button (click)="updateCart()">Update Cart</button>
+        </div>
+        <div class="cart-line-delete-btn">
+            <button mat-raised-button color="warn" (click)="deleteProduct(line.id)">Delete</button>
+        </div>
+    </div>
+    <div class="total-line-price">
+        Total Price: $ <span class="">{{ total_price }}</span>
+    </div>
+</div>
